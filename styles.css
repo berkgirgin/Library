@@ -1,0 +1,12 @@
+html,
+body {
+  background-color: lightgray;
+  font: 1em sans-serif;
+}
+
+.book_table {
+  height: 400px;
+  width: 700px;
+  background-color: aquamarine;
+  display: grid;
+}

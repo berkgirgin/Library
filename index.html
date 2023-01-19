@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Library App</h1>
+
+    <div class="book_table">
+      <div class="titles_book_table">
+        <div>Title</div>
+        <div>Author</div>
+        <div>is Read</div>
+      </div>
+      <div class="all_books"></div>
+    </div>
+    <button class="button add_book">View Books</button>
+
+    <form class="form">
+      <div class="form_row">
+        <label for="form_title">Title</label>
+        <input
+          type="text"
+          name="title"
+          id="form_title"
+          maxlength="40"
+          placeholder="LOTR"
+        />
+      </div>
+      <div class="form_row">
+        <label for="form_author">Author</label>
+        <input
+          type="text"
+          name="author"
+          id="form_author"
+          maxlength="40"
+          placeholder="J.K Rowling"
+        />
+      </div>
+      <div class="form_row">
+        <label for="form_is-read">Have you read this already?</label>
+        <input type="checkbox" name="isRead" id="form_is-read" value="true" />
+      </div>
+
+      <button class="button form_submit" type="submit">Submit your book</button>
+    </form>
+
+    <script src="./test.js"></script>
+  </body>
+</html>
