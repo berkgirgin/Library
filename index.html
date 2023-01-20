@@ -8,46 +8,67 @@
   </head>
 
   <body>
-    <h1>Library App</h1>
+    <div class="main_container">
+      <header class="header">
+        <img src="./images/reading_man.png" alt="book_logo" class="logo" />
+        <div class="header_text">
+          <h1>Library App</h1>
+          <p>
+            This is a library app I wrote, making use of
+            <i>Object Constructors</i>.
+          </p>
+          <p>
+            You can view the
+            <a href="https://berkgirgin.github.io/Library/"
+              >Github repository</a
+            >
+            of this project.
+          </p>
+        </div>
+        <button class="button add_book">&#x2b;</button>
+      </header>
 
-    <div class="book_table">
-      <div class="titles_book_table">
-        <div>Title</div>
-        <div>Author</div>
-        <div>is Read</div>
+      <div class="book_table">
+        <div class="titles_book_table">
+          <div>Title</div>
+          <div>Author</div>
+          <div>Already read?</div>
+        </div>
+        <div class="all_books"></div>
       </div>
-      <div class="all_books"></div>
+      <!-- <button class="button add_book">View Books</button> -->
+
+      <form class="form">
+        <div class="form_row">
+          <label for="form_title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="form_title"
+            maxlength="40"
+            placeholder="LOTR"
+          />
+        </div>
+        <div class="form_row">
+          <label for="form_author">Author</label>
+          <input
+            type="text"
+            name="author"
+            id="form_author"
+            maxlength="40"
+            placeholder="J.K Rowling"
+          />
+        </div>
+        <div class="form_row">
+          <label for="form_is-read">Have you read this already?</label>
+          <input type="checkbox" name="isRead" id="form_is-read" value="true" />
+        </div>
+
+        <button class="button form_submit" type="submit">
+          Submit your book
+        </button>
+      </form>
     </div>
-    <button class="button add_book">View Books</button>
-
-    <form class="form">
-      <div class="form_row">
-        <label for="form_title">Title</label>
-        <input
-          type="text"
-          name="title"
-          id="form_title"
-          maxlength="40"
-          placeholder="LOTR"
-        />
-      </div>
-      <div class="form_row">
-        <label for="form_author">Author</label>
-        <input
-          type="text"
-          name="author"
-          id="form_author"
-          maxlength="40"
-          placeholder="J.K Rowling"
-        />
-      </div>
-      <div class="form_row">
-        <label for="form_is-read">Have you read this already?</label>
-        <input type="checkbox" name="isRead" id="form_is-read" value="true" />
-      </div>
-
-      <button class="button form_submit" type="submit">Submit your book</button>
-    </form>
 
     <script src="./test.js"></script>
   </body>

@@ -1,12 +1,124 @@
-html,
-body {
-  background-color: lightgray;
-  font: 1em sans-serif;
+:root {
+  --background-color: #181a1b;
+  --font_color_white: #e8e6e3;
+  color: var(--font_color_white);
+  font-size: 20px;
+  --main_container_gap: 1.5rem;
+  --add_button_blue_background: #009de7;
+  --border_color_grey: #858585;
 }
 
-.book_table {
-  height: 400px;
-  width: 700px;
-  background-color: aquamarine;
+html,
+body {
+  background-color: var(--background-color);
+  font: 1rem sans-serif;
+}
+
+/* * {
+  border: 2px red solid;
+  margin: 1px;
+} */
+
+/* ********************************* */
+/* for main_container, background, buttons and font colors */
+/* ********************************* */
+
+.main_container {
   display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 40px 100px;
+  gap: var(--main_container_gap);
+}
+
+button {
+  cursor: pointer;
+  color: var(--font_color_white);
+}
+button:hover {
+  transform: scale(1.2);
+}
+
+/* ********************************* */
+/* for the header */
+/* ********************************* */
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--main_container_gap);
+}
+
+.header .logo {
+  height: 200px;
+  width: auto;
+}
+
+.header button {
+  width: 90px;
+  height: 90px;
+  border-radius: 180px;
+  border: none;
+  align-self: center;
+  background-color: var(--add_button_blue_background);
+  font-size: 3rem;
+}
+
+p {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+p a {
+  color: var(--add_button_blue_background);
+}
+
+/* ********************************* */
+/* for the books */
+/* ********************************* */
+
+.book_table {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 10px;
+}
+
+.book_table > .titles_book_table {
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr 1fr;
+  border-bottom: 2px var(--border_color_grey) solid;
+  padding: 20px 0;
+  font-weight: 600;
+}
+
+.book_table > .all_books {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+}
+
+.book_table > .all_books > .book {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 3fr 2fr 1fr;
+  /* grid-template-rows: repeat(auto-fit, 1fr); */
+  border-bottom: 2px var(--border_color_grey) solid;
+  padding: 10px 0;
+}
+
+.book_table > .all_books > .book > button.is_read {
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.book_table > .all_books > .book > button.remove_book {
+  width: 40px;
+  height: 40px;
+  border-radius: 180px;
+  border: none;
+  background-color: var(--background-color);
+  font-size: 1.2rem;
 }

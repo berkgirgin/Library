@@ -1,7 +1,7 @@
-const addBookButton = document.querySelector(".add_book");
-addBookButton.addEventListener("click", () => {
-  displayBooks();
-});
+// const addBookButton = document.querySelector(".add_book");
+// addBookButton.addEventListener("click", () => {
+//   displayBooks();
+// });
 
 const submitFormButton = document.querySelector(".form_submit");
 submitFormButton.addEventListener("click", (event) => {
@@ -19,7 +19,11 @@ const myLibrary = [];
 // };
 
 // setting up example books for start page
-const exampleBook_1 = new createBook("LOTR", "Tolkien", true);
+const exampleBook_1 = new createBook(
+  "LOTasadsfdsdadasfcs<dcR",
+  "Tolkwfgdfjdfosdadpmsdfpsmfonsfcoknsdoksndien",
+  true
+);
 const exampleBook_2 = new createBook("Harry Potter", "Rowling", false);
 const exampleBook_3 = new createBook("Stranger", "Albert Camus", true);
 
@@ -66,9 +70,11 @@ function displayBooks() {
     newBookIsRead.classList.add("is_read");
     newBookIsRead.setAttribute("data-book-index", `${i}`);
     if (book.isRead === true) {
-      newBookIsRead.innerHTML = "Read <span>yee</span>";
+      newBookIsRead.innerHTML = ":)";
+      newBookIsRead.style.backgroundColor = "#3FBF7F";
     } else {
-      newBookIsRead.innerHTML = "Read <span>noo</span>";
+      newBookIsRead.innerHTML = ":(";
+      newBookIsRead.style.backgroundColor = "#BF3F3F";
     }
     newBookIsRead.addEventListener("click", () => {
       changeIsRead(newBookIsRead.getAttribute("data-book-index"));
@@ -134,3 +140,5 @@ function submitFunction(event) {
 
   addBook(newBook);
 }
+
+displayBooks();
