@@ -3,31 +3,47 @@
 //   displayBooks();
 // });
 
+const bookForm = document.querySelector(".form");
+const overlay = document.querySelector(".overlay_for_form");
+const closeFormButton = document.querySelector(".close_form_button");
+const addBookButton = document.querySelector(".add_book");
+function openForm() {
+  bookForm.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeForm() {
+  bookForm.classList.remove("active");
+  overlay.classList.remove("active");
+}
+addBookButton.addEventListener("click", () => {
+  openForm();
+});
+closeFormButton.addEventListener("click", () => {
+  closeForm();
+});
+overlay.addEventListener("click", () => {
+  closeForm();
+});
+
 const submitFormButton = document.querySelector(".form_submit");
 submitFormButton.addEventListener("click", (event) => {
   submitFunction(event);
 });
 
-const bookForm = document.querySelector(".form");
 const bookTable = document.querySelector(".book_table");
 const allBooks = document.querySelector(".all_books");
 const myLibrary = [];
 
-// Book.prototype.info = function () {
-//   const returnMessage = `${title} by ${author}, ${numberOfPages} pages, is it read: ${isRead}`;
-//   return returnMessage;
-// };
-
 // setting up example books for start page
-const exampleBook_1 = new createBook(
-  "LOTasadsfdsdadasfcs<dcR",
-  "Tolkwfgdfjdfosdadpmsdfpsmfonsfcoknsdoksndien",
-  true
-);
-const exampleBook_2 = new createBook("Harry Potter", "Rowling", false);
-const exampleBook_3 = new createBook("Stranger", "Albert Camus", true);
 
-myLibrary.splice(-1, 0, exampleBook_1, exampleBook_2, exampleBook_3);
+const exampleBook_1 = new createBook(
+  "Harry Potter and the Chamber of Secrets",
+  "J.K. Rowling",
+  false
+);
+const exampleBook_2 = new createBook("the Stranger", "Albert Camus", true);
+
+myLibrary.splice(-1, 0, exampleBook_1, exampleBook_2);
 console.log(myLibrary);
 //
 
@@ -139,6 +155,7 @@ function submitFunction(event) {
   );
 
   addBook(newBook);
+  closeForm();
 }
 
 displayBooks();

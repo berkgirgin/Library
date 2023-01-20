@@ -19,7 +19,7 @@
           </p>
           <p>
             You can view the
-            <a href="https://berkgirgin.github.io/Library/"
+            <a href="https://github.com/berkgirgin/Library"
               >Github repository</a
             >
             of this project.
@@ -39,8 +39,12 @@
       <!-- <button class="button add_book">View Books</button> -->
 
       <form class="form">
+        <header>
+          <div>Please enter your book</div>
+          <button class="button close_form_button">&#x2716;</button>
+        </header>
         <div class="form_row">
-          <label for="form_title">Title</label>
+          <label for="form_title">Title:</label>
           <input
             type="text"
             name="title"
@@ -50,7 +54,7 @@
           />
         </div>
         <div class="form_row">
-          <label for="form_author">Author</label>
+          <label for="form_author">Author:</label>
           <input
             type="text"
             name="author"
@@ -70,6 +74,8 @@
       </form>
     </div>
 
-    <script src="./test.js"></script>
+    <div class="overlay_for_form"></div>
+
+    <script src="./library.js"></script>
   </body>
 </html>

@@ -5,7 +5,10 @@
   font-size: 20px;
   --main_container_gap: 1.5rem;
   --add_button_blue_background: #009de7;
+  --add_button_blue_background_ligther: #42c3ff;
   --border_color_grey: #858585;
+  --border_radius: 10px;
+  --form_border: 2px var(--border_color_grey) solid;
 }
 
 html,
@@ -33,9 +36,14 @@ body {
 button {
   cursor: pointer;
   color: var(--font_color_white);
+  background-color: var(--add_button_blue_background);
+  border-radius: var(--border_radius);
+  font-size: 1.2rem;
+  border: none;
 }
 button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  background-color: var(--add_button_blue_background_ligther);
 }
 
 /* ********************************* */
@@ -59,8 +67,11 @@ button:hover {
   border-radius: 180px;
   border: none;
   align-self: center;
-  background-color: var(--add_button_blue_background);
   font-size: 3rem;
+}
+.header .button:hover {
+  background-color: var(--add_button_blue_background_ligther);
+  transform: scale(1.1);
 }
 
 p {
@@ -72,6 +83,9 @@ p a {
   color: var(--add_button_blue_background);
 }
 
+a:hover {
+  color: var(--add_button_blue_background_ligther);
+}
 /* ********************************* */
 /* for the books */
 /* ********************************* */
@@ -84,7 +98,7 @@ p a {
 
 .book_table > .titles_book_table {
   display: grid;
-  grid-template-columns: 3fr 3fr 2fr 1fr;
+  grid-template-columns: 4fr 4fr 2fr 1fr;
   border-bottom: 2px var(--border_color_grey) solid;
   padding: 20px 0;
   font-weight: 600;
@@ -93,32 +107,109 @@ p a {
 .book_table > .all_books {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: min-content;
 }
 
 .book_table > .all_books > .book {
   display: grid;
   align-items: center;
-  grid-template-columns: 3fr 3fr 2fr 1fr;
-  /* grid-template-rows: repeat(auto-fit, 1fr); */
+  grid-template-columns: 4fr 4fr 2fr 1fr;
   border-bottom: 2px var(--border_color_grey) solid;
   padding: 10px 0;
+  font-size: 0.8rem;
 }
 
 .book_table > .all_books > .book > button.is_read {
   width: 90px;
   height: 40px;
-  border-radius: 10px;
-  border: none;
   color: black;
   font-weight: 600;
-  font-size: 1.2rem;
+  margin-left: 8px;
 }
 .book_table > .all_books > .book > button.remove_book {
   width: 40px;
   height: 40px;
   border-radius: 180px;
-  border: none;
-  background-color: var(--background-color);
+  background-color: transparent;
+}
+.book_table > .all_books > .book > button.remove_book:hover {
+  transform: scale(1.2);
+}
+
+/* testing here */
+/* form */
+
+/* for the form, background and colors are reversed */
+.form {
+  border: var(--form_border);
+  background-color: var(--font_color_white);
+  color: var(--background-color);
+  font-size: 1rem;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms;
+  border-radius: var(--border_radius);
+  z-index: 10;
+
+  width: 500px;
+  max-width: 80%;
+  height: 300px;
+  max-height: 80%;
+  padding: 40px 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--form_border);
+  align-items: center;
   font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+
+.form header button {
+  background-color: transparent;
+  color: var(--background-color);
+}
+
+.form .form_row {
+  display: flex;
+  gap: 8px;
+}
+
+.form .form_submit {
+  align-self: center;
+  padding: 2px 12px;
+  margin-top: 20px;
+  color: var(--background-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* setting up the form pop-up */
+
+.overlay_for_form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+.overlay_for_form.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.form.active {
+  transform: translate(-50%, -50%) scale(1);
 }
