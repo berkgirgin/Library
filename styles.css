@@ -67,6 +67,7 @@ button:hover {
   border-radius: 180px;
   border: none;
   align-self: center;
+  text-align: center;
   font-size: 3rem;
 }
 .header .button:hover {
@@ -99,6 +100,7 @@ a:hover {
 .book_table > .titles_book_table {
   display: grid;
   grid-template-columns: 4fr 4fr 2fr 1fr;
+  gap: 8px;
   border-bottom: 2px var(--border_color_grey) solid;
   padding: 20px 0;
   font-weight: 600;
@@ -113,6 +115,7 @@ a:hover {
   display: grid;
   align-items: center;
   grid-template-columns: 4fr 4fr 2fr 1fr;
+  gap: 8px;
   border-bottom: 2px var(--border_color_grey) solid;
   padding: 10px 0;
   font-size: 0.8rem;
@@ -186,11 +189,22 @@ a:hover {
 
 .form .form_submit {
   align-self: center;
-  padding: 2px 12px;
+  padding: 4px 12px;
   margin-top: 20px;
   color: var(--background-color);
   font-weight: 600;
   font-size: 1rem;
+}
+
+.form .form_author,
+.form .form_title {
+  align-self: center;
+  width: 70px;
+}
+.form input {
+  border-radius: var(--border_radius);
+  border: 2px var(--background-color) solid;
+  padding: 12px;
 }
 
 /* setting up the form pop-up */
